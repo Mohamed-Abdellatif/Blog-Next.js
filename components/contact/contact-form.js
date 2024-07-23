@@ -80,6 +80,7 @@ const ContactForm = () => {
       message: requestError,
     };
   }
+  console.log(requestError)
   return (
     <section className={classes.contact}>
       <h1>How Can I Help You?</h1>
