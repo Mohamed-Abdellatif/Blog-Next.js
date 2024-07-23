@@ -1,4 +1,4 @@
-// import { MongoClient } from 'mongodb';
+ import { MongoClient } from 'mongodb';
 
 
 
@@ -26,7 +26,7 @@
 
 //     let client;
 
-//     const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.hybw0wo.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority&appName=Cluster0`;
+    const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.hybw0wo.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority&appName=Cluster0`;
     
 //     try {
 //       client = await MongoClient.connect(connectionString);
@@ -55,7 +55,7 @@
 // }
 
 // export default handler;
-import clientPromise from '../../lib/mongodb';
+
 
 const handler = async (req, res) => {
   if (req.method === 'POST') {
@@ -73,8 +73,8 @@ const handler = async (req, res) => {
     };
 
     try {
-      const client = await clientPromise;
-      const db = client.db('my-blog');
+      const client =  await MongoClient.connect(connectionString);
+      const db = client.db();
       const result = await db.collection('messages').insertOne(newMessage);
       newMessage.id = result.insertedId;
 
