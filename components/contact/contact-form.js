@@ -30,7 +30,7 @@ const ContactForm = () => {
       const timer = setTimeout(()=>{
         setRequestStatus(null);
         setRequestError(null)
-      },3000)
+      },100000)
 
       return ()=> clearTimeout(timer)
     }
@@ -80,7 +80,7 @@ const ContactForm = () => {
       message: requestError,
     };
   }
-  console.log(requestError)
+  
   return (
     <section className={classes.contact}>
       <h1>How Can I Help You?</h1>
