@@ -30,7 +30,7 @@ const ContactForm = () => {
       const timer = setTimeout(()=>{
         setRequestStatus(null);
         setRequestError(null)
-      },100000)
+      },3000)
 
       return ()=> clearTimeout(timer)
     }
