@@ -6,7 +6,7 @@ import Notification from "../ui/notification";
 const sendContactData = async (contactDetails) => {
   const response = await fetch("/api/contact", {
     method: "POST",
-    body: JSON.stringify(contactDetails),
+    body: JSON.parse(JSON.stringify(contactDetails)),
     headers: {
       "Content-Type": "application/json",
     },
